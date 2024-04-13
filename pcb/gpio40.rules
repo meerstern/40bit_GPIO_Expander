@@ -1,0 +1,82 @@
+
+(rules PCB gpio40
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 2173)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 3.2)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 1.5)
+    )
+  )
+  (rule
+    (width 220.0)
+    (clear 220.2)
+    (clear 110.0 (type smd_to_turn_gap))
+    (clear 55.0 (type smd_smd))
+  )
+  (padstack "Via[0-1]_800:400_um"
+    (shape
+      (circle F.Cu 800.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 800.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-1]_800:400_um" "Via[0-1]_800:400_um" default
+  )
+  (via 
+    "Via[0-1]_800:400_um-kicad_default" "Via[0-1]_800:400_um" "kicad_default"
+  )
+  (via_rule
+    default "Via[0-1]_800:400_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-1]_800:400_um-kicad_default"
+  )
+  (class default
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 220.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    /GND /VDD "Net-(D1-Pad1)" /SDA /SCL /INT "/IO_23" "/IO_22"
+    "/IO_21" "/IO_20" "/IO_17" "/IO_16" "/IO_15" "/IO_14" "/IO_13" "/IO_12"
+    "/IO_11" "/IO_10" "/IO_07" "/IO_06" "/IO_05" "/IO_04" "/IO_03" "/IO_02"
+    "/IO_01" "/IO_00" "/IO_47" "/IO_46" "/IO_45" "/IO_44" "/IO_43" "/IO_42"
+    "/IO_41" "/IO_40" "/IO_37" "/IO_36" "/IO_35" "/IO_34" "/IO_33" "/IO_32"
+    "/IO_31" "/IO_30" "/IO_27" "/IO_26" "/IO_25" "/IO_24" /OE /RST
+    /A0 /A1 /A2
+    (clearance_class "kicad_default")
+    (via_rule kicad_default)
+    (rule
+      (width 220.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+)
