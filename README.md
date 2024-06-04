@@ -21,6 +21,10 @@
 
   [1]: https://www.nxp.com/products/interfaces/ic-spi-i3c-interface-devices/general-purpose-i-o-gpio/40-bit-ic-bus-i-o-port-with-reset-oe-and-int:PCA9505_06
 
+## 外観
+* サイズ 約27mm x約60mm(コネクタ含めず)
+* サイズ 約27mm x約63mm(コネクタ含め)
+  
 <img src="/img/img1.JPG" width="300">
 <img src="/img/img2.JPG" width="300">
 
